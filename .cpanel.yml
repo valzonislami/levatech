@@ -1,5 +1,7 @@
 ---
 deployment:
   tasks:
+    - /bin/echo "🚀 Starting deployment..."
     - export DEPLOYPATH=/home/vigjiggly/levatech/wp-content/
-    - /bin/rsync -av --delete --exclude=".git" ./ $DEPLOYPATH
+    - /bin/rsync -av --delete --exclude=".git" --exclude=".cpanel.yml" ./ $DEPLOYPATH
+    - /bin/echo "✅ Deployment complete!"
